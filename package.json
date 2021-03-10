@@ -1,0 +1,23 @@
+{
+  "name": "protractor_code",
+  "version": "1.0.0",
+  "description": "protractor practice",
+  "main": "index.js",
+  "dependencies": {
+    "jasmine": "3.6.4",
+    "jasmine-allure-reporter": "1.0.2",
+    "protractor": "7.0.0",
+    "protractor-jasmine2-screenshot-reporter": "^0.5.0"
+  },
+  "scripts": {
+    "preprotractor": "webdriver-manager update",
+    "test": "protractor conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://saurabhimpetus@bitbucket.org/saurabhimpetus/protractor.git"
+  },
+  "author": "saurabh",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/saurabhimpetus/protractor#readme"
+}
