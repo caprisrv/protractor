@@ -30,6 +30,5 @@ var AngularHomepage = function() {
     this.getHistory = function() {
       return history;
     };
-  
   };
   module.exports = new AngularHomepage();
