@@ -6,7 +6,7 @@ var reporter = new HtmlScreenshotReporter({
 });
 
 exports.config = {
-    specs: ['spec.js'],
+    specs: ['test/spec.js'],
     directConnect:true,
     jasmineNodeOpts:{
         defaultTimeoutInterval: 30000

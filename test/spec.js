@@ -1,5 +1,5 @@
 const { browser, element, by } = require("protractor");
-var homePage = require('./pages/homepage');
+var homePage = require('../pages/homepage.js');
 
 describe('Enter Name', function(){
 
@@ -8,9 +8,16 @@ describe('Enter Name', function(){
     });
 
     
-    it('verify title of julie mr site',function(){
-        var text=browser.getTitle();
-        expect(text).toEqual('Super Calculator');
+    /* it('verify title of julie mr site',function(){
+        browser.getTitle().then(title=>{
+            console.log("title is "+title);
+            expect(title).toEqual('Super Calculator');
+        })
+    }); */
+
+    fit('verify title of julie mr site',async function(){
+        var title = await browser.getTitle();
+        expect(title).toEqual('Super Calculator');
     });
 
     it('verify addition of two numbers',function(){

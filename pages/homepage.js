@@ -8,7 +8,7 @@ var AngularHomepage = function() {
   
     this.get = async function() {
       await browser.get('http://juliemr.github.io/protractor-demo/')
-      .then(()=>browser.manage().window().maximize());
+      browser.manage().window().maximize();
     };
   
     this.setFirstName = async function(name) {
