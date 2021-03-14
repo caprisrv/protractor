@@ -1,45 +1,34 @@
-const { browser, element, by } = require("protractor");
-var homePage = require('../pages/homepage.js');
+const { BaseClass } = require("../common/baseClass");
+const { HomePage } = require("../pages/homepagenew");
 
-describe('Enter Name', function(){
+const homePage = new HomePage();
+const baseClass = new BaseClass();
+
+describe('Enter Name',function(){
 
     beforeAll(async function(){
-        await homePage.get();
-    });
+        baseClass.openPage();
+    })
 
-    
-    /* it('verify title of julie mr site',function(){
-        browser.getTitle().then(title=>{
-            console.log("title is "+title);
-            expect(title).toEqual('Super Calculator');
-        })
-    }); */
-
-    fit('verify title of julie mr site',async function(){
+    it('verify title of julie mr site',async function(){
         var title = await browser.getTitle();
         expect(title).toEqual('Super Calculator');
     });
 
-    it('verify addition of two numbers',function(){
+    it('verify addition of two numbers',async function(){
 
-        homePage.setFirstName('1');
-        homePage.setSecondName('2');
-        homePage.getButton();
-        expect(homePage.getText()).toEqual('3');
-        
-        homePage.setFirstName('2');
-        homePage.setSecondName('3');
-        homePage.getButton();
-        expect(homePage.getText()).toEqual('5');
-    });
-
+        await homePage.enterFirstNumber('1');
+        await homePage.enterSecondNumber('2');
+        await homePage.clickgoBtn();
+        await expect(homePage.ResulText().getText()).toEqual('3');
+        });
     it('Verify history',async function(){
-        await homePage.getHistory().each((ele) => {
+        //var history = homePage.findHistory();
+        await homePage.findHistory().each((ele) => {
             ele.getText().then((text) => {
-                console.log(text);
+                console.log("The Text is "+text);
             });
     });
     });
-    
-});
 
+})

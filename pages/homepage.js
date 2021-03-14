@@ -20,7 +20,7 @@ var AngularHomepage = function() {
     };
   
     this.getText = function() {
-      return text.getText();
+      text.getText();
     };
 
     this.getButton = async function(){
