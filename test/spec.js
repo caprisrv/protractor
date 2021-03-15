@@ -1,13 +1,14 @@
-const { BaseClass } = require("../common/baseClass");
 const { HomePage } = require("../pages/homepagenew");
+const { CommonFunc } = require("../common/commonFunc");
+const inputData = require("../testdata/homePageInput.json");
 
 const homePage = new HomePage();
-const baseClass = new BaseClass();
+const CF = new CommonFunc();
 
 describe('Enter Name',function(){
 
     beforeAll(async function(){
-        baseClass.openPage();
+        CF.openPage();
     })
 
     it('verify title of julie mr site',async function(){
@@ -17,10 +18,11 @@ describe('Enter Name',function(){
 
     it('verify addition of two numbers',async function(){
 
-        await homePage.enterFirstNumber('1');
-        await homePage.enterSecondNumber('2');
-        await homePage.clickgoBtn();
-        await expect(homePage.ResulText().getText()).toEqual('3');
+        /* await homePage.enterFirstNumber(inputData.homepage.firstNumber);
+        await homePage.enterSecondNumber(inputData.homepage.secondNumber);
+        await homePage.clickgoBtn(); */
+        await CF.enterNumbersAndClick();
+        await expect(homePage.ResulText().getText()).toEqual(inputData.homepage.validateNumber);
         });
     it('Verify history',async function(){
         //var history = homePage.findHistory();

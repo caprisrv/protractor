@@ -1,0 +1,10 @@
+{
+    "homepage":{
+        "firstNumber":"1",
+        "secondNumber":"2",
+        "validateNumber":"3"
+    },
+    "url":{
+        "baseURL":"http://juliemr.github.io/protractor-demo/"
+    }
+}
